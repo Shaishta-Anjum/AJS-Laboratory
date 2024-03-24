@@ -1,0 +1,24 @@
+<!--Create an AngularJS application that displays the date by using date filter parameters-->
+<!DOCTYPE html>
+<html>
+<title>Date Application</title>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> </script>
+</head>
+<body>
+ <h1>Date in different formats</h1>
+ <div ng-app="dateApp" ng-controller="dateAppCntrl">
+ Current Date and Time: {{current}}<br />
+ Short Date: {{current|date: 'short'}}<br />
+ Long Date: {{current |date: 'fullDate'}}<br />
+ Medium Date:{{current| date: 'medium'}}
+
+ <script>
+ var app = angular.module("dateApp", []);
+ app.controller("dateAppCntrl", function ($scope) {
+ $scope.current = new Date();
+ }); 
+ </script>
+</div>
+</body>
+</html>
